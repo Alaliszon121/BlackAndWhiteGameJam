@@ -4,8 +4,8 @@ var velocity = Vector2.ZERO
 enum States {WALK}
 var state = States.WALK
 const ACCELERATION = 500
-const SPEED = 180
-const FRICTION = 100
+const SPEED = 380
+const FRICTION = 250
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
