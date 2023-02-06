@@ -373,12 +373,13 @@ script = ExtResource( 3 )
 modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
-animation = "up"
-frame = 5
+animation = "right"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -14 )
+position = Vector2( 15, 0 )
+rotation = 1.5708
 shape = SubResource( 39 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -390,6 +391,7 @@ shape = SubResource( 39 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 52 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 53 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
