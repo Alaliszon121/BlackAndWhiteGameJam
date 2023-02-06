@@ -374,7 +374,7 @@ modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "up"
-frame = 3
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
