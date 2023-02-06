@@ -31,8 +31,10 @@ func walk_state(delta):
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		
 		animationState.travel("Walk")
-		
-		velocity = velocity.move_toward(input_vector * SPEED, ACCELERATION * delta)
+		var accel = ACCELERATION * delta
+		if input_vector.length() > 0.5:
+			accel = accel * 2
+		velocity = velocity.move_toward(input_vector * SPEED, accel)
 	else:
 		animationState.travel("Idle")
 		

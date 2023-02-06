@@ -18,6 +18,7 @@ script = ExtResource( 2 )
 navpoly = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Navigation2D"]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 512, 280 )
 texture = ExtResource( 1 )
 
@@ -33,20 +34,11 @@ position = Vector2( 948, 66 )
 position = Vector2( 598, 316 )
 
 [node name="Position2D4" type="Position2D" parent="Navigation2D/Positions"]
-position = Vector2( 328, 283 )
+position = Vector2( 309, 513 )
 
 [node name="Position2D5" type="Position2D" parent="Navigation2D/Positions"]
-position = Vector2( 501, 577 )
-
-[node name="Position2D6" type="Position2D" parent="Navigation2D/Positions"]
-position = Vector2( 413, 514 )
-
-[node name="Position2D7" type="Position2D" parent="Navigation2D/Positions"]
 position = Vector2( 944, 523 )
 
-[node name="Position2D8" type="Position2D" parent="Navigation2D/Positions"]
-position = Vector2( 529, 55 )
-
 [node name="Shark" parent="Navigation2D" instance=ExtResource( 3 )]
-position = Vector2( 136, 75 )
+position = Vector2( 569, 56 )
 scale = Vector2( 0.5, 0.5 )

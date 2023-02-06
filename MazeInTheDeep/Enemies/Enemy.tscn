@@ -70,8 +70,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=39]
-radius = 8.0
-height = 62.0
+radius = 23.0
+height = 82.0
 
 [sub_resource type="Animation" id=40]
 resource_name = "Walk Down"
@@ -121,7 +121,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 15 ), Vector2( 0, 15 ) ]
+"values": [ Vector2( 0, -8 ), Vector2( 0, -8 ) ]
 }
 
 [sub_resource type="Animation" id=41]
@@ -184,7 +184,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -16, 0 ), Vector2( -16, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=42]
@@ -247,7 +247,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 15, 0 ), Vector2( 15, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=43]
@@ -298,7 +298,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -15 ), Vector2( 0, -15 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=44]
@@ -370,15 +370,13 @@ graph_offset = Vector2( -232.195, 0 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "right"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 15, 0 )
 rotation = 1.5708
 shape = SubResource( 39 )
 
