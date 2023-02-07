@@ -371,7 +371,7 @@ graph_offset = Vector2( -232.195, 0 )
 position = Vector2( -4.76837e-07, 0 )
 scale = Vector2( 0.7, 0.7 )
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 script = ExtResource( 1 )
 path_to_player = NodePath("../../Player")
 
@@ -385,7 +385,7 @@ modulate = Color( 1, 0.223529, 0.223529, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "right"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -393,6 +393,8 @@ wait_time = 0.1
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 60.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Walk Down" = SubResource( 58 )
@@ -420,53 +422,4 @@ texture = ExtResource( 4 )
 scale = Vector2( 1, 1 )
 enabled = true
 cast_to = Vector2( 331.429, 0 )
-
-[node name="RayCast2D2" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, -22.8571 )
-
-[node name="RayCast2D3" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, 22.8571 )
-
-[node name="RayCast2D4" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, -45.7143 )
-
-[node name="RayCast2D5" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, 45.7143 )
-
-[node name="RayCast2D6" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, 68.5714 )
-
-[node name="RayCast2D7" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, -68.5714 )
-
-[node name="RayCast2D8" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, -91.4286 )
-
-[node name="RayCast2D9" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, 91.4286 )
-
-[node name="RayCast2D10" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, 114.286 )
-
-[node name="RayCast2D11" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 331.429, -114.286 )
+collide_with_areas = true
