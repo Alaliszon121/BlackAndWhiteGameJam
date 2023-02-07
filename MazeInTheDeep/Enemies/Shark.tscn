@@ -385,7 +385,7 @@ modulate = Color( 1, 0.223529, 0.223529, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "right"
-frame = 4
+frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -394,7 +394,7 @@ autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
-radius = 60.0
+radius = 100.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Walk Down" = SubResource( 58 )
@@ -419,7 +419,6 @@ scale = Vector2( 0.485966, 0.405988 )
 texture = ExtResource( 4 )
 
 [node name="RayCast2D" type="RayCast2D" parent="raycast"]
-scale = Vector2( 1, 1 )
 enabled = true
 cast_to = Vector2( 331.429, 0 )
 collide_with_areas = true
