@@ -461,7 +461,7 @@ modulate = Color( 1, 0.223529, 0.223529, 1 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "up"
-frame = 5
+frame = 7
 playing = true
 flip_v = true
 
