@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	for _raycast in _raycasts:
-		if(_raycast.get_collider() == Area2D):
+		if(_raycast.get_collider() is Area2D):
 			print("i see you!")
 		else:
 			print(_raycast.get_collider())
