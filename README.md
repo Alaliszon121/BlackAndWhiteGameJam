@@ -1,2 +1,3 @@
 # BlackAndWhiteGameJam
  
+Have fun
