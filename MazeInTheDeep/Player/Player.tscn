@@ -303,51 +303,51 @@ tracks/3/keys = {
 "values": [ Vector2( 0, -15 ), Vector2( 0, -15 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=44]
+[sub_resource type="AnimationNodeAnimation" id=62]
 animation = "Walk Down"
 
-[sub_resource type="AnimationNodeAnimation" id=45]
+[sub_resource type="AnimationNodeAnimation" id=63]
 animation = "Walk Right"
 
-[sub_resource type="AnimationNodeAnimation" id=46]
+[sub_resource type="AnimationNodeAnimation" id=64]
 animation = "Walk Up"
 
-[sub_resource type="AnimationNodeAnimation" id=47]
+[sub_resource type="AnimationNodeAnimation" id=65]
 animation = "Walk Left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=11]
-blend_point_0/node = SubResource( 44 )
+blend_point_0/node = SubResource( 62 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 45 )
+blend_point_1/node = SubResource( 63 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 46 )
+blend_point_2/node = SubResource( 64 )
 blend_point_2/pos = Vector2( 0, -1.1 )
-blend_point_3/node = SubResource( 47 )
+blend_point_3/node = SubResource( 65 )
 blend_point_3/pos = Vector2( -1, 0 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=48]
+[sub_resource type="AnimationNodeAnimation" id=66]
 animation = "Walk Down"
 
-[sub_resource type="AnimationNodeAnimation" id=49]
+[sub_resource type="AnimationNodeAnimation" id=67]
 animation = "Walk Up"
 
-[sub_resource type="AnimationNodeAnimation" id=50]
+[sub_resource type="AnimationNodeAnimation" id=68]
 animation = "Walk Right"
 
-[sub_resource type="AnimationNodeAnimation" id=51]
+[sub_resource type="AnimationNodeAnimation" id=69]
 animation = "Walk Left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=16]
-blend_point_0/node = SubResource( 48 )
+blend_point_0/node = SubResource( 66 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 49 )
+blend_point_1/node = SubResource( 67 )
 blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 50 )
+blend_point_2/node = SubResource( 68 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 51 )
+blend_point_3/node = SubResource( 69 )
 blend_point_3/pos = Vector2( -1, 0 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
@@ -378,11 +378,12 @@ script = ExtResource( 2 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "up"
-frame = 3
+frame = 6
 playing = true
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -14 )
+position = Vector2( 0, 15 )
 shape = SubResource( 38 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
