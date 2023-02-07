@@ -1,10 +1,11 @@
+class_name Player
 extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 enum States {WALK}
 var state = States.WALK
 const ACCELERATION = 500
-const SPEED = 380
+const SPEED = 250
 const FRICTION = 250
 
 onready var animationTree = $AnimationTree

@@ -1,16 +1,28 @@
 extends KinematicBody2D
 
+export var path_to_player := NodePath()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var _velocity := Vector2.ZERO
 
+onready var _agent: NavigationAgent2D = $NavigationAgent2D
+onready var _timer: Timer = $Timer
+onready var _player := get_node(path_to_player)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready() -> void:
+	_update_pathfinding()
+	_timer.connect("timeout", self, "_update_pathfinding")
 
+func _physics_process(delta: float) -> void:
+	if _agent.is_navigation_finished():
+		return
+	
+	var target_global_position := _agent.get_next_location()
+	var direction := global_position.direction_to(target_global_position)
+	#var desired_velocity := direction * _agent.max_speed
+	var desired_velocity := direction * 200.0
+	var steering := (desired_velocity - _velocity) * delta * 4.0
+	_velocity += steering
+	_velocity = move_and_slide(_velocity)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _update_pathfinding() -> void:
+	_agent.set_target_location(_player.global_position)

@@ -368,15 +368,17 @@ graph_offset = Vector2( -232.195, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
-[node name="Player" type="KinematicBody2D"]
-scale = Vector2( 2, 2 )
+[node name="Player" type="KinematicBody2D" groups=["player"]]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "up"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
