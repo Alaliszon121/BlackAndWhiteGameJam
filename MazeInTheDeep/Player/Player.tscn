@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://ASSETS/player/Fish- Side.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/player/FishSide.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=33]
@@ -125,6 +125,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0, 15 ), Vector2( 0, 15 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Area2D:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Walk Left"
@@ -187,6 +211,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -16, 0 ), Vector2( -16, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Area2D:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -251,6 +287,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 15, 0 ), Vector2( 15, 0 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Area2D:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Walk Up"
@@ -301,6 +349,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, -15 ), Vector2( 0, -15 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Area2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=62]
@@ -364,7 +424,7 @@ states/Walk/node = SubResource( 16 )
 states/Walk/position = Vector2( 210.805, 110 )
 transitions = [ "Idle", "Walk", SubResource( 17 ), "Walk", "Idle", SubResource( 18 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -232.195, 0 )
+graph_offset = Vector2( -655.195, -154.156 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
@@ -381,12 +441,11 @@ script = ExtResource( 2 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "up"
-frame = 6
+frame = 3
 playing = true
-flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 15 )
+position = Vector2( 0, -15 )
 shape = SubResource( 38 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -400,13 +459,9 @@ tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 20 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Walk/blend_position = Vector2( 0, 0 )
+parameters/Walk/blend_position = Vector2( 0, -0.0013665 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 70 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 0.75, 0.75 )

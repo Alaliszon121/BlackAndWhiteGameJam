@@ -18,24 +18,20 @@ onready var _hunt_timer: Timer = $HuntTimer
 onready var _player := get_node(path_to_player)
 onready var _positions := get_node(path_of_positions)
 onready var _raycasts := [$raycast/RayCast2D, $raycast/RayCast2D2, $raycast/RayCast2D3, $raycast/RayCast2D4, $raycast/RayCast2D5, $raycast/RayCast2D6, $raycast/RayCast2D7]
-
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
+onready var _animatedSprite := $AnimatedSprite
 
 func _ready() -> void:
 	_timer.connect("timeout", self, "_update_pathfinding")
 	_hunt_timer.connect("timeout", self, "_on_HuntTimer_timeout")
 	_agent.connect("velocity_computed", self, "move")
-	_agent.set_max_speed(150.0)
-	animationTree.active = true
 
 func _physics_process(delta: float) -> void:
 	check_raycasts_collision()
 	
 	if _agent.is_navigation_finished():
-		counter += 1
 		if counter > 3:
 			counter = 0
+		counter += 1
 		return
 	
 	var target_global_position := _agent.get_next_location()
@@ -60,13 +56,14 @@ func check_raycasts_collision() -> void:
 
 func move(velocity: Vector2) -> void:
 	_velocity = move_and_slide(velocity)
-	$raycast.rotation = lerp_angle($raycast.rotation, velocity.angle(), 10.0 * get_physics_process_delta_time())
-	animationTree.set("parameters/Walk/blend_position", _velocity.normalized())
-	animationState.travel("Walk")
+	_animatedSprite.play("up")
+	rotation = _velocity.angle() + PI / 2
+	#$raycast.rotation = lerp_angle($raycast.rotation, velocity.angle(), 10.0 * get_physics_process_delta_time())
 
 func _update_pathfinding() -> void:
 	if !can_see_player:
 		_agent.set_target_location(_positions.get_child(counter).position)
+		print(_positions.get_child(counter).position, ", ", counter)
 	else:
 		_agent.set_target_location(_player.global_position)
 
