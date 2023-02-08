@@ -72,8 +72,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=38]
-radius = 8.0
-height = 62.0
+radius = 12.0
+height = 56.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "Walk Down"
@@ -369,11 +369,10 @@ graph_offset = Vector2( -232.195, 0 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [sub_resource type="CapsuleShape2D" id=70]
-radius = 42.0
-height = 48.0
+radius = 26.0
+height = 88.0
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
-scale = Vector2( 0.5, 0.5 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
@@ -382,7 +381,7 @@ script = ExtResource( 2 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "up"
-frame = 1
+frame = 6
 playing = true
 flip_v = true
 
@@ -407,3 +406,7 @@ parameters/Walk/blend_position = Vector2( 0, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 70 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.75, 0.75 )
