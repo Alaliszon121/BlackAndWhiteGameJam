@@ -60,8 +60,8 @@ __meta__ = {
 }
 
 [node name="Quitt" type="LinkButton" parent="Panel"]
-anchor_left = 0.503906
-anchor_top = 0.853333
+anchor_left = 0.496094
+anchor_top = 0.843333
 anchor_right = 0.496094
 anchor_bottom = 0.843333
 margin_left = -52.0
