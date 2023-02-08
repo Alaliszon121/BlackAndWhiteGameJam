@@ -5,7 +5,7 @@ var velocity = Vector2.ZERO
 enum States {WALK}
 var state = States.WALK
 const ACCELERATION = 500
-const SPEED = 250
+const SPEED = 400
 const FRICTION = 250
 
 onready var animationTree = $AnimationTree
@@ -28,10 +28,11 @@ func walk_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		animationState.travel("Walk")
+		
 		animationTree.set("parameters/Walk/blend_position", input_vector)
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		
-		animationState.travel("Walk")
 		var accel = ACCELERATION * delta
 		if input_vector.length() > 0.5:
 			accel = accel * 2

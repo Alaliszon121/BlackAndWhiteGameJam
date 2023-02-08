@@ -65,9 +65,19 @@ position = Vector2( 902.75, 445 )
 shape = SubResource( 57 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 96, 112 )
+position = Vector2( 920, 200 )
 collision_layer = 1
 collision_mask = 4
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = -32
+limit_right = 1016
+limit_bottom = 592
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../Camera2D")
 
 [node name="Positions" type="Node2D" parent="."]
 

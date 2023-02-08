@@ -34,13 +34,30 @@ scale = Vector2( 1.25, 1.25 )
 collision_layer = 1
 collision_mask = 4
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2( 1, 1 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3286
+limit_bottom = 1888
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../Camera2D")
+
 [node name="Positions" type="Node2D" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 1132.11, 711.748 )
+position = Vector2( 1107.18, 693.319 )
 
 [node name="Position2D2" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 319.186, 498.224 )
+position = Vector2( 103.486, 109.94 )
+
+[node name="Position2D3" type="Position2D" parent="Positions" groups=["positions"]]
+position = Vector2( 1020.52, 913.198 )
+
+[node name="Position2D4" type="Position2D" parent="Positions" groups=["positions"]]
+position = Vector2( 1643.93, 321.558 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 edge_connection_margin = 10.0
