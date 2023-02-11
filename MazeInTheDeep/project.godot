@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Maze In The Deep"
-run/main_scene="res://UI/MainMenu.tscn"
+run/main_scene="res://UI/Menu.tscn"
 config/icon="res://ASSETS/icon.png"
 
 [display]
