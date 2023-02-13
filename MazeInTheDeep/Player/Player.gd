@@ -1,18 +1,13 @@
 class_name Player
+
 extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 enum States {WALK}
 var state = States.WALK
 const ACCELERATION = 500
-const SPEED = 400
+const SPEED = 300
 const FRICTION = 250
-
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
-
-func _ready():
-	animationTree.active = true
 
 func _process(delta):
 	match state:
@@ -28,17 +23,11 @@ func walk_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
-		animationState.travel("Walk")
-		
-		animationTree.set("parameters/Walk/blend_position", input_vector)
-		animationTree.set("parameters/Idle/blend_position", input_vector)
-		
 		var accel = ACCELERATION * delta
 		if input_vector.length() > 0.5:
 			accel = accel * 2
 		velocity = velocity.move_toward(input_vector * SPEED, accel)
+		rotation = lerp_angle(rotation, velocity.angle() + PI / 2, 10.0 * get_physics_process_delta_time())
 	else:
-		animationState.travel("Idle")
-		
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)

@@ -21,7 +21,7 @@ vertices = PoolVector2Array( 456, 192, 368, 152, 448, 144, 656, 144, 656, 192, 4
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 2, 1, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 5, 6, 12 ), PoolIntArray( 13, 11, 12, 14 ), PoolIntArray( 15, 16, 17, 18 ), PoolIntArray( 19, 20, 16, 15, 21, 22 ), PoolIntArray( 13, 14, 23 ), PoolIntArray( 8, 7, 24, 25 ), PoolIntArray( 26, 25, 24, 27 ), PoolIntArray( 28, 29, 30, 31 ), PoolIntArray( 32, 33, 34, 35, 36 ), PoolIntArray( 35, 37, 38, 39 ), PoolIntArray( 40, 41, 42, 26 ), PoolIntArray( 43, 44, 45, 46 ), PoolIntArray( 47, 43, 46, 48, 49 ), PoolIntArray( 9, 50, 51, 52, 10 ), PoolIntArray( 53, 54, 55, 56 ), PoolIntArray( 18, 17, 56, 57 ), PoolIntArray( 55, 57, 56 ), PoolIntArray( 35, 39, 58 ), PoolIntArray( 59, 53, 56 ), PoolIntArray( 59, 56, 13, 60 ), PoolIntArray( 60, 13, 23, 61, 62 ), PoolIntArray( 63, 62, 61, 64 ), PoolIntArray( 63, 64, 65 ), PoolIntArray( 66, 10, 52 ), PoolIntArray( 66, 52, 48, 46 ), PoolIntArray( 19, 47, 49, 20 ), PoolIntArray( 31, 22, 21, 63, 65, 28 ), PoolIntArray( 31, 30, 1, 0 ), PoolIntArray( 4, 3, 67, 24 ), PoolIntArray( 27, 40, 26 ), PoolIntArray( 68, 27, 24, 67 ), PoolIntArray( 68, 67, 69 ), PoolIntArray( 68, 69, 32, 36 ), PoolIntArray( 36, 35, 58 ) ]
 outlines = [ PoolVector2Array( 48, 0, 432, 0, 432, 136, 448, 144, 656, 144, 672, 136, 672, 104, 656, 88, 504, 88, 504, 0, 984, 0, 984, 272, 840, 272, 840, 80, 824, 64, 792, 64, 776, 80, 776, 320, 792, 336, 984, 336, 984, 416, 800, 416, 784, 432, 784, 464, 800, 480, 984, 480, 984, 560, 504, 560, 504, 432, 488, 416, 448, 416, 432, 432, 432, 560, 48, 560 ), PoolVector2Array( 160, 112, 160, 272, 176, 288, 216, 288, 232, 272, 232, 168, 352, 168, 368, 152, 368, 112, 352, 96, 176, 96 ), PoolVector2Array( 456, 192, 440, 208, 440, 344, 456, 360, 488, 360, 504, 344, 504, 248, 608, 248, 608, 472, 624, 488, 656, 488, 672, 472, 672, 200, 656, 192 ), PoolVector2Array( 88, 352, 103.938, 336, 216.763, 336, 232, 352, 232, 512, 224, 528, 184, 528, 176, 512, 176, 400, 104, 400, 88, 384.42 ) ]
 
-[node name="NavigationServer2D" type="Node2D"]
+[node name="NavigationServer2D2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -85,7 +85,7 @@ remote_path = NodePath("../Camera2D")
 position = Vector2( 96, 40 )
 
 [node name="Position2D2" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 96, 488 )
+position = Vector2( 128, 512 )
 
 [node name="Position2D3" type="Position2D" parent="Positions" groups=["positions"]]
 position = Vector2( 736, 520 )
@@ -101,6 +101,7 @@ navpoly = SubResource( 1 )
 
 [node name="Shark" parent="Navigation2D" instance=ExtResource( 3 )]
 position = Vector2( 568, 48 )
+path_to_player = NodePath("../../Player")
 path_of_positions = NodePath("../../Positions")
 
 [node name="Sprite" type="Sprite" parent="."]

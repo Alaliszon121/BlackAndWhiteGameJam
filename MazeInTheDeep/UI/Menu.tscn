@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://UI/ButtonsTheme.tres" type="Theme" id=2]
 [ext_resource path="res://ASSETS/fonts/RockSalt-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/circle_05.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/fonts/Roboto-Light.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -23,6 +24,9 @@ font_data = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=6]
 size = 25
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 3 )
@@ -129,10 +133,12 @@ scale_amount_random = 0.07
 [node name="ver" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = -14.0
-margin_right = 40.0
+margin_left = 8.0
+margin_top = -24.0
+margin_right = 55.0
+margin_bottom = -5.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "ver 1.0"
 
 [node name="description" type="Label" parent="."]
