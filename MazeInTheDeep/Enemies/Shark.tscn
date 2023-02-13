@@ -1,48 +1,36 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://addons/luisboch.field_of_view/field_of_view.gd" type="Script" id=2]
-[ext_resource path="res://ASSETS/player/FishUp.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/SharkUp.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=39]
 radius = 8.57143
 height = 28.5714
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 512, 512 )
+region = Rect2( 1024, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 3 )
 region = Rect2( 512, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 3 )
-region = Rect2( 1024, 0, 512, 512 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 3 )
-region = Rect2( 2048, 0, 512, 512 )
-
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 3 )
 region = Rect2( 1536, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 3 )
 region = Rect2( 2048, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 3 )
-region = Rect2( 1024, 0, 512, 512 )
-
 [sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 41 ), SubResource( 40 ), SubResource( 43 ), SubResource( 44 ), SubResource( 43 ) ],
 "loop": true,
 "name": "up",
 "speed": 4.0
@@ -60,11 +48,11 @@ position = Vector2( -0.285721, 22.5714 )
 shape = SubResource( 39 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 0.223529, 0.223529, 1 )
 position = Vector2( -0.285713, 45.4286 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "up"
+frame = 6
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
