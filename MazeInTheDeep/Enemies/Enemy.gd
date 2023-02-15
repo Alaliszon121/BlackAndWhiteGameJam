@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 func check_raycasts_collision() -> void:
 	raycast_is_colliding = false
 	for _raycast in _raycasts:
-		if(_raycast.get_collider() is Area2D):
+		if(_raycast.get_collider() is Chase_area):
 			raycast_is_colliding = true
 	if raycast_is_colliding:
 		can_see_player = true

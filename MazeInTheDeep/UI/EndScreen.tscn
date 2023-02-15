@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ASSETS/fonts/RockSalt-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/ButtonsTheme.tres" type="Theme" id=2]
 [ext_resource path="res://UI/Bubble.png" type="Texture" id=3]
 [ext_resource path="res://UI/EndScreen.gd" type="Script" id=4]
 [ext_resource path="res://UI/BackgroundEnd.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/music/button_click.wav" type="AudioStream" id=6]
+[ext_resource path="res://ASSETS/music/menu_music.mp3" type="AudioStream" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -145,5 +147,15 @@ angle_random = 0.5
 scale_amount = 0.01
 scale_amount_random = 0.07
 
-[connection signal="pressed" from="VBoxContainer/GoToMainMenu" to="." method="_on_GoToMainMenu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 10.0
+pitch_scale = 0.6
+
+[connection signal="button_up" from="VBoxContainer/GoToMainMenu" to="." method="_on_GoToMainMenu_button_up"]
+[connection signal="button_up" from="VBoxContainer/Quit" to="." method="_on_Quit_button_up"]

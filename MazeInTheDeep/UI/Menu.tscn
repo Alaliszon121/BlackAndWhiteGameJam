@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://UI/ButtonsTheme.tres" type="Theme" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://UI/Bubble.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/fonts/Roboto-Light.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://UI/Background.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/music/button_click.wav" type="AudioStream" id=7]
+[ext_resource path="res://ASSETS/music/menu_music.mp3" type="AudioStream" id=8]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -168,5 +170,15 @@ Watch out for the the sharks,
 if they spot you they will chase you.
 Don't starve yourself to death."
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 10.0
+pitch_scale = 0.6
+
+[connection signal="button_up" from="VBoxContainer/StartButton" to="." method="_on_StartButton_button_up"]
+[connection signal="button_up" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_button_up"]

@@ -9,18 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Chase_area",
+"language": "GDScript",
+"path": "res://Player/Area2DPlayer.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
+"Chase_area": "",
 "Player": ""
 }
 
 [application]
 
 config/name="Maze In The Deep"
+run/main_scene="res://UI/Menu.tscn"
 config/icon="res://ASSETS/icon.png"
 <<<<<<<Updatedupstreamrun/main_scene="res://UI/Menu.tscn"
 

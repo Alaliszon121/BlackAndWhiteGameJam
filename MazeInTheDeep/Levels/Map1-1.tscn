@@ -39,6 +39,7 @@ collision_layer = 1
 collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2( 1, 1 )
 current = true
 limit_left = 0
 limit_top = 0

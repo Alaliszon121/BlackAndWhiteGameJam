@@ -9,6 +9,11 @@ const ACCELERATION = 500
 const SPEED = 300
 const FRICTION = 250
 
+var last_position
+var rotation_rate = 10.0
+# magnitude((last - curr)) / delta
+# input: 0..300
+# output: 1..10
 func _process(delta):
 	match state:
 		States.WALK:
@@ -27,6 +32,10 @@ func walk_state(delta):
 		if input_vector.length() > 0.5:
 			accel = accel * 2
 		velocity = velocity.move_toward(input_vector * SPEED, accel)
+		
+		#var true_speed = magnitude((last_position - position)) / delta
+		
+		
 		rotation = lerp_angle(rotation, velocity.angle() + PI / 2, 10.0 * get_physics_process_delta_time())
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
