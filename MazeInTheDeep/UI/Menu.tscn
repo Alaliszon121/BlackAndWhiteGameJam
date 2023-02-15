@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://UI/ButtonsTheme.tres" type="Theme" id=2]
 [ext_resource path="res://ASSETS/fonts/RockSalt-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://UI/circle_05.png" type="Texture" id=4]
+[ext_resource path="res://UI/Bubble.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/fonts/Roboto-Light.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://UI/Background.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -41,6 +42,43 @@ margin_right = 1024.0
 margin_bottom = 600.0
 custom_styles/panel = SubResource( 3 )
 
+[node name="Background" type="Sprite" parent="Panel"]
+modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 6 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 499, 601 )
+rotation = -1.57079
+amount = 25
+lifetime = 10.0
+preprocess = 8.0
+speed_scale = 0.5
+explosiveness = 0.07
+randomness = 0.32
+lifetime_randomness = 0.11
+texture = ExtResource( 4 )
+emission_shape = 3
+emission_points = PoolVector2Array( 20, 500, 20, 250, 20, -250, 20, -500, 0, 0 )
+emission_colors = PoolColorArray(  )
+direction = Vector2( 0, 0 )
+spread = 90.0
+gravity = Vector2( 20, 2 )
+initial_velocity = 30.0
+initial_velocity_random = 0.1
+angular_velocity = 50.0
+orbit_velocity = 0.01
+orbit_velocity_random = 0.4
+linear_accel = 8.0
+radial_accel = -10.0
+radial_accel_random = 1.0
+damping = 7.91
+damping_random = 0.25
+angle = 720.0
+angle_random = 0.5
+scale_amount = 0.01
+scale_amount_random = 0.07
+
 [node name="TitleProb" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -57,10 +95,10 @@ valign = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = -232.0
-margin_right = 165.0
-margin_bottom = -182.0
+margin_left = 32.0
+margin_top = -340.0
+margin_right = 283.0
+margin_bottom = -152.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -102,41 +140,13 @@ text = "Quit"
 align = 0
 icon_align = 1
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2( 480, 264 )
-rotation = -1.05418
-amount = 100
-lifetime = 8.0
-preprocess = 10.0
-lifetime_randomness = 0.3
-texture = ExtResource( 4 )
-emission_shape = 1
-emission_sphere_radius = 550.0
-direction = Vector2( 0, 0 )
-spread = 180.0
-gravity = Vector2( -3, 2 )
-initial_velocity = 30.0
-initial_velocity_random = 0.1
-angular_velocity = 50.0
-orbit_velocity = 0.01
-orbit_velocity_random = 0.4
-linear_accel = 8.0
-radial_accel = -10.0
-radial_accel_random = 1.0
-damping = 7.91
-damping_random = 0.25
-angle = 720.0
-angle_random = 0.5
-scale_amount = 0.01
-scale_amount_random = 0.07
-
 [node name="ver" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = -24.0
-margin_right = 55.0
-margin_bottom = -5.0
+margin_left = 22.0
+margin_top = -22.0
+margin_right = 69.0
+margin_bottom = -3.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "ver 1.0"
@@ -146,10 +156,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -408.0
-margin_top = -76.0
-margin_right = -66.0
-margin_bottom = 173.0
+margin_left = -347.0
+margin_top = -132.0
+margin_right = -5.0
+margin_bottom = 117.0
 custom_fonts/font = SubResource( 8 )
 text = "Movement: WSAD or ARROWS
 
