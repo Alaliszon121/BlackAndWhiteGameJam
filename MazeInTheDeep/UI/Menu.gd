@@ -8,7 +8,7 @@ func _ready():
 func _on_StartButton_button_up():
 	select.play()
 	yield(select, "finished")
-	get_tree().change_scene("res://Levels/Test Level.tscn")
+	get_tree().change_scene("res://Levels/Map1-1.tscn")
 
 func _on_QuitButton_button_up():
 	select.play()

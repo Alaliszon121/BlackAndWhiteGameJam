@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://addons/luisboch.field_of_view/field_of_view.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/SharkUp.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/music/SHARK_WARNING.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=39]
 radius = 8.57143
@@ -56,7 +57,7 @@ position = Vector2( -0.285713, 45.4286 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "up"
-frame = 7
+frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -132,3 +133,9 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.42857, 21.4286 )
 shape = SubResource( 45 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
+max_distance = 1000.0
