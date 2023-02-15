@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ASSETS/maps/MapsLevel3/MapLevel3-1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,16 @@
 [ext_resource path="res://ASSETS/fonts/RockSalt-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Levels/Map3-1.gd" type="Script" id=6]
 [ext_resource path="res://ASSETS/music/level_music.wav" type="AudioStream" id=7]
+[ext_resource path="res://HealthBar.gd" type="Script" id=8]
+[ext_resource path="res://ASSETS/fonts/Roboto-Light.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://collectible/collectible.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 38
+font_data = ExtResource( 9 )
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 4054.66, 1276.06, 4049.67, 2353.85, 3984.84, 1870.88, 3974.86, 1921.72, 1431.35, 1306.57, 1575.98, 1204.89, 1570.99, 1845.46, 1416.39, 1428.58, 1397.74, 1335.68, 1406.41, 1484.5, 4054.66, 20.3357, 4064.64, 1189.64, 3920, 1057.45, 3915.02, 604.986, 3939.95, 452.469, 1436.34, 1662.44, 1271.76, 1840.38, 1396.44, 1692.94, 1092.21, 1911.55, 1092.21, 1682.78, 1234.54, 1876.5, 2373.95, 472.804, 2373.95, 706.664, 2249.26, 615.154, 2249.26, 549.063, 3929.98, 1382.83, 3947.08, 1846.44, 3929.39, 1656.76, 1221.88, 2074.24, 1057.3, 1936.97, 3521.02, 1357.41, 3506.06, 1265.9, 3905.04, 1352.32, 3915.02, 1692.94, 3830.23, 1850.55, 3810.28, 1728.53, 3875.12, 1687.86, 1690.69, 564.315, 1695.68, 1098.13, 1610.89, 1154.05, 1546.06, 1077.79, 1546.06, 543.979, 2608.35, 1774.29, 1830.33, 1789.54, 1835.32, 1738.7, 2443.77, 1738.7, 2483.67, 1723.45, 2598.37, 1581.1, 2493.64, 1672.61, 2019.85, 1489.59, 2009.88, 1392.99, 2438.78, 1398.08, 2608.35, 1489.59, 2468.71, 1372.66, 2603.36, 1077.79, 2468.71, 981.196, 2673.18, 991.364, 2638.27, 1052.37, 2693.13, 1052.37, 2713.08, 976.112, 2009.87, 798.175, 2199.39, 782.923, 2189.42, 1184.55, 2014.86, 1225.22, 2179.44, 371.126, 1994.91, 376.21, 2009.87, 172.853, 2180.55, 236.148, 1880.21, 2130.16, 2139.54, 2130.16, 2129.57, 2231.84, 1930.08, 2231.84, 1650.79, 2135.24, 1715.63, 2119.99, 1840.31, 2119.99, 1890.18, 2247.09, 1316.64, 2292.85, 1329.91, 2257.42, 3934.97, 1931.89, 3835.22, 2226.76, 1316.64, 1901.38, 1566.01, 1911.55, 1570.99, 2094.57, 3585.86, 188.105, 3590.84, 269.448, 3146.98, 264.364, 3297.48, 192.559, 3261.68, 183.021, 3141.99, 30.5035, 3256.7, 142.35, 3625.75, 1550.59, 3745.45, 1738.7, 3750.44, 1972.56, 3645.7, 1967.48, 3560.92, 1703.11, 3600.82, 1570.93, 3296.59, 1703.11, 2683.16, 1698.03, 2693.13, 1565.85, 3346.47, 1713.28, 3486.11, 1662.44, 922.647, 371.126, 1301.68, 371.126, 1296.69, 447.385, 1092.21, 432.133, 1047.33, 467.72, 922.647, 752.42, 1036.69, 740.858, 1072.27, 1413.33, 1072.27, 960.86, 1125.21, 964.234, 1381.03, 1417.89, 1162.04, 950.692, 1326.62, 1301.48, 2204.38, 2318.27, 2199.39, 2125.08, 2354, 2130.16, 2349.01, 2369.1, 3052.22, 899.853, 3047.23, 1291.31, 2902.6, 1281.15, 2897.61, 777.839, 3073.83, 857.189, 3151.96, 793.091, 3122.04, 864.266, 907.685, 157.601, 902.698, 40.6713, 1685.7, 40.6713, 1351.55, 122.014, 1301.68, 132.182, 783.003, 2358.94, 778.016, 2160.66, 1231.86, 2165.75, 1236.85, 2257.26, 3396.34, 579.566, 3391.35, 467.72, 3900.06, 462.636, 2453.74, 701.58, 2443.77, 513.476, 2713.08, 508.392, 2718.07, 604.986, 778.016, 1113.38, 787.991, 1494.67, 673.283, 1494.67, 538.627, 1113.38, 2618.32, 2364.02, 2423.82, 2369.1, 2423.82, 1992.9, 2626.02, 2228.9, 2648.25, 2206.42, 1461.27, 721.916, 1137.1, 721.916, 1132.11, 528.727, 1356.54, 528.727, 1466.26, 554.147, 1401.43, 498.224, 1490.97, 518.56, 3825.25, 1016.78, 3740.46, 1016.78, 3745.45, 798.175, 3830.23, 650.741, 3725.5, 772.755, 3565.91, 645.657, 3690.59, 767.671, 3650.69, 803.855, 3570.89, 904.937, 3645.7, 1006.62, 3489.23, 1008.2, 3539.74, 936.131, 3341.48, 940.524, 3456.19, 1026.95, 3331.5, 1504.84, 3456.19, 1072.71, 3476.14, 1093.04, 3441.23, 1220.14, 2658.22, 320.287, 2428.81, 325.371, 2428.81, 172.853, 2515.42, 172.853, 2543.51, 172.853, 2663.21, 152.517, 2553.49, 122.014, 1072.27, 798.175, 1441.32, 798.175, 1436.34, 1026.95, 1365.45, 1026.95, 1336.59, 1057.45, 1157.05, 899.853, 1930.08, 137.266, 1935.07, 366.042, 1755.52, 366.042, 1745.55, 40.6713, 3146.98, 396.545, 3146.98, 320.287, 3635.73, 330.455, 3311.56, 386.378, 1685.7, 2053.9, 1650.79, 2053.9, 1665.75, 1255.73, 3371.4, 604.986, 3471.54, 596.498, 3476.14, 854.098, 3283.95, 854.098, 3181.89, 782.923, 3181.89, 732.084, 2892.62, 2160.66, 2892.62, 2064.07, 3481.12, 2074.24, 3321.53, 2165.75, 3476.14, 2221.67, 3351.45, 2186.08, 3351.45, 2236.92, 3506.06, 2252.17, 3830.23, 1931.89, 239.104, 1774.29, 473.792, 1774.29, 468.805, 2074.24, 154.606, 2079.32, 3097.1, 1921.72, 3481.12, 1916.64, 3481.12, 1992.9, 2897.61, 1992.9, 3067.18, 1906.47, 2897.61, 1876.89, 3072.17, 1855.63, 2882.65, 1845.46, 3306.57, 523.643, 2802.85, 528.727, 2802.85, 467.72, 3097.1, 432.133, 3132.01, 432.133, 3311.56, 2247.09, 3795.32, 2267.43, 2693.13, 2353.85, 2693.13, 2242.01, 2842.75, 2242.01, 1431.35, 1123.55, 1515.4, 1123.55, 49.8728, 172.853, 49.8728, 40.6713, 842.851, 40.6713, 613.436, 101.678, 1685.7, 122.014, 1301.68, 177.937, 897.711, 183.021, 259.339, 915.105, 259.339, 1194.72, 154.606, 1194.72, 3745.45, 2043.73, 3740.46, 2181, 3565.91, 2175.92, 3640.72, 2038.65, 3610.79, 2028.48, 3610.79, 1982.73, 1002.44, 1642.1, 997.457, 1855.63, 533.639, 1850.55, 658.321, 1586.18, 827.889, 1591.27, 204.479, 1764.12, 2986.18, 324.903, 2728.04, 320.287, 2728.04, 157.601, 3077.15, 40.6713, 3916.15, 385.204, 3820.26, 381.294, 3825.25, 152.517, 49.8728, 572.994, 393.995, 569.399, 398.983, 732.084, 633.385, 1509.92, 629.285, 1546.48, 872.774, 1555.68, 1034.48, 1600.95, 1331.6, 193.189, 1680.71, 198.273, 1685.7, 406.713, 1940.05, 1342.15, 1935.07, 1413.33, 1770.49, 1408.24, 738.118, 2079.32, 543.614, 1931.89, 548.601, 2175.92, 693.232, 2119.99, 688.245, 2348.77, 543.614, 2211.5, 2673.18, 122.014, 2358.98, 1987.81, 2354, 2058.99, 1892.15, 2058.99, 169.568, 2170.83, 458.83, 2170.83, 463.817, 2221.67, 49.8728, 2358.94, 3860.16, 1657.36, 3785.35, 1708.2, 3625.75, 1509.92, 1371.5, 1494.67, 1436.34, 1611.6, 3875.12, 1093.04, 3486.11, 1189.64, 1924.04, 2293.64, 2134.56, 2297.93, 2139.54, 2323.35, 1770.49, 1484.5, 1920.1, 1489.59, 1929.81, 1542.34, 1805.4, 1642.1, 1755.52, 1662.44, 1251.81, 2287.76, 2194.4, 2333.52, 2228.53, 528.727, 2229.32, 442.301, 1396.44, 325.371, 1526.11, 518.559, 2229.66, 630.142, 1964.99, 706.664, 1780.46, 625.322, 1915.12, 737.168, 1770.49, 1098.13, 1915.12, 1148.97, 1353.26, 1333.52, 496.462, 2238.09, 114.708, 2160.66, 54.8601, 1525.17, 109.72, 2099.66, 199.491, 1703.11, 319.186, 1525.17, 231.398, 1683.45, 473.792, 1687.86, 359.084, 1509.92, 468.805, 1072.71, 359.084, 1464.17, 319.081, 1448.92, 339.135, 1255.73, 857.813, 1067.62, 1001.56, 1452.97, 1961.92, 106.983, 2511.19, 111.498, 2718.07, 122.014, 3012.32, 340.622, 3082.14, 401.629, 3007.33, 371.126, 1974.96, 1250.64, 2220.62, 1229.04, 1984.94, 1321.82, 3291.61, 127.098, 3625.75, 127.098, 3765.4, 106.762, 2453.22, 1652.83, 1960, 1570.93, 902.698, 782.923, 2199.39, 218.608, 2358.98, 172.853, 2229.32, 218.608, 2363.97, 355.874, 2244.28, 249.112, 2244.28, 421.965, 2393.9, 381.294, 3437.44, 1401.37, 3481.12, 1438.75, 3605.28, 1500.19, 3860.16, 1428.58, 3545.96, 1657.36, 1740.56, 1464.17, 1720.61, 2074.24, 1740.56, 1423.5, 2762.95, 635.49, 3145.48, 711.174, 2807.84, 599.902, 3476.14, 1692.94, 3476.14, 1840.38, 3346.47, 1774.29, 3117.05, 1845.46, 3301.58, 1779.37, 2693.13, 1789.54, 2842.75, 1845.46, 2693.13, 2053.9, 2817.81, 1881.05, 2812.83, 2201.34, 2678.17, 2084.41, 2633.29, 2104.74, 2673.18, 2206.42, 1795.42, 1881.05, 2373.95, 1962.39, 1845.29, 2064.07, 1730.59, 528.727, 1710.64, 442.301, 3132.01, 899.853, 413.944, 772.755, 309.212, 884.601, 2408.86, 1962.39, 2613.34, 2069.15, 2987.38, 376.21, 2713.08, 1093.04, 2802.85, 788.007, 114.708, 1220.14, 1400.95, 1596.7, 1027.38, 1494.67, 2155.45, 2338.6, 3521.02, 569.399, 992.469, 971.028, 832.876, 1032.04, 339.135, 971.028, 503.716, 1032.04, 312.417, 1276.06, 49.8728, 1448.92, 139.644, 1276.06, 114.708, 1255.73, 568.55, 879.518, 463.817, 772.755, 478.779, 742.252, 578.525, 416.881, 478.779, 523.643, 438.881, 498.224, 199.491, 406.713, 64.8347, 503.308, 164.58, 396.545, 59.8474, 264.364, 159.593, 345.706, 200.15, 326.45, 443.868, 269.448, 593.487, 340.622, 488.754, 244.028, 593.487, 147.434, 493.741, 198.273, 453.843, 172.853, 857.813, 188.105, 1366.52, 294.867, 1075.59, 294.867, 857.813, 294.867, 2418.83, 447.385, 2752.41, 442.727, 663.309, 111.846, 847.838, 167.769, 673.283, 152.517, 668.296, 884.601, 837.864, 320.287, 3136.53, 1323.35, 3251.71, 884.601, 3246.72, 1484.5, 1114.41, 889.195, 857.813, 782.923, 837.864, 752.42, 3740.46, 381.294, 3665.65, 310.119, 3745.45, 127.098, 3660.67, 157.601, 3810.28, 116.93, 3939.95, 411.797, 1900.15, 2282.68, 2608.35, 1875.97, 1755.52, 1850.55, 3867.93, 569.399, 3107.08, 1377.74, 2708.09, 1484.5, 2832.78, 1377.74, 2798.56, 1296.07, 2713.08, 910.021, 2668.12, 882.338, 2294.15, 782.923, 2428.81, 884.601, 2393.9, 920.189, 2309.11, 1179.47, 2388.91, 1321.82, 2284.18, 1235.39 )
@@ -23,6 +33,46 @@ font_data = ExtResource( 5 )
 [node name="NavigationServer2D" type="Node2D"]
 scale = Vector2( 1.60408, 1.57359 )
 script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 19.0
+margin_right = 24.0
+margin_bottom = 19.0
+script = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HealthBar"]
+margin_right = 56.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer/HealthBar/Panel"]
+margin_left = 142.0
+margin_top = 13.0
+margin_right = 233.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 5 )
+text = "100%"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HealthBar/Panel"]
+margin_left = 16.0
+margin_top = 11.0
+margin_right = 137.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 5 )
+text = "energy:"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/HealthBar"]
+wait_time = 100.0
+one_shot = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 2049.77, 1199.8 )
@@ -76,19 +126,77 @@ limit_bottom = 3776
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../Camera2D")
 
+[node name="collectible" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1256.8, 86.4265 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 872.774, 1652.27 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1775.47, 2125.08 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2458.73, 411.797 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3221.78, 396.545 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3017.31, 254.196 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3650.69, 1474.34 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3984.84, 1682.78 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 144.631, 2262.34 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible10" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2987.38, 854.098 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible11" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2553.49, 1037.12 )
+scale = Vector2( 0.4, 0.4 )
+
 [node name="Positions" type="Node2D" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Positions" groups=["positions"]]
 position = Vector2( 2205, 479.795 )
 
 [node name="Position2D2" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 465.687, 828.678 )
+position = Vector2( 1152.06, 233.86 )
 
 [node name="Position2D3" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 998.703, 2010.69 )
+position = Vector2( 154.606, 1113.38 )
 
 [node name="Position2D4" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 1814.12, 1977.01 )
+position = Vector2( 1461.27, 1530.26 )
+
+[node name="Positions2" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="Positions2" groups=["positions"]]
+position = Vector2( 3750.44, 538.895 )
+
+[node name="Position2D2" type="Position2D" parent="Positions2" groups=["positions"]]
+position = Vector2( 2782.9, 1403.16 )
+
+[node name="Position2D3" type="Position2D" parent="Positions2" groups=["positions"]]
+position = Vector2( 1915.12, 1957.31 )
+
+[node name="Position2D4" type="Position2D" parent="Positions2" groups=["positions"]]
+position = Vector2( 3685.6, 1662.44 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 edge_connection_margin = 10.0
@@ -98,6 +206,12 @@ position = Vector2( 2309.74, 612.612 )
 scale = Vector2( 1, 1 )
 path_to_player = NodePath("../../Player")
 path_of_positions = NodePath("../../Positions")
+
+[node name="Shark2" parent="Navigation2D" instance=ExtResource( 3 )]
+position = Vector2( 3994.81, 650.741 )
+scale = Vector2( 1, 1 )
+path_to_player = NodePath("../../Player")
+path_of_positions = NodePath("../../Positions2")
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( -4.98728, 0 )
@@ -130,4 +244,19 @@ stream = ExtResource( 7 )
 volume_db = -20.0
 autoplay = true
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="timeout" from="CanvasLayer/HealthBar/Timer" to="CanvasLayer/HealthBar" method="_on_Timer_timeout"]
+[connection signal="add_time" from="collectible" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible2" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible3" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible4" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible5" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible6" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible7" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible8" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible9" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible10" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible11" to="CanvasLayer/HealthBar" method="_on_add_time"]
 [connection signal="area_entered" from="WinPoint" to="." method="_on_WinPoint_area_entered"]

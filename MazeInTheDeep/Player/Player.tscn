@@ -1,50 +1,49 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Area2DPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/music/shark_bite.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/player/FishUp.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/light.png" type="Texture" id=5]
 
-[sub_resource type="StreamTexture" id=52]
-load_path = "res://.import/Fish- Up.png-bd474e851e798fb8fc98d2390990afe1.stex"
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = SubResource( 52 )
-region = Rect2( 0, 0, 512, 512 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 4 )
 region = Rect2( 512, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=27]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=28]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 4 )
 region = Rect2( 1024, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=29]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 4 )
 region = Rect2( 2048, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=30]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 4 )
 region = Rect2( 1536, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=31]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 4 )
 region = Rect2( 2048, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = SubResource( 52 )
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 4 )
 region = Rect2( 1024, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 512, 512 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"frames": [ SubResource( 73 ), SubResource( 72 ), SubResource( 74 ), SubResource( 76 ), SubResource( 75 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
 "loop": true,
 "name": "up",
-"speed": 4.0
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=38]
@@ -70,7 +69,7 @@ position = Vector2( -1, 20 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "up"
-frame = 3
+frame = 7
 playing = true
 flip_h = true
 
@@ -108,5 +107,8 @@ shape = SubResource( 71 )
 stream = ExtResource( 3 )
 volume_db = -10.0
 pitch_scale = 0.95
+
+[node name="Light2D2" type="Light2D" parent="."]
+texture = ExtResource( 5 )
 
 [connection signal="area_entered" from="enemy_checker" to="." method="_on_enemy_checker_area_entered"]

@@ -28,6 +28,7 @@ func _ready() -> void:
 	_agent.connect("velocity_computed", self, "move")
 	_fieldOfView.connect("target_enter", self, "_on_FieldOfView_target_enter")
 	_fieldOfView.connect("target_exit", self, "_on_FieldOfView_target_exit")
+	$AudioStreamPlayer2D.play()
 
 func _physics_process(delta: float) -> void:
 	check_raycasts_collision()
@@ -73,3 +74,5 @@ func _update_pathfinding() -> void:
 func _on_HuntTimer_timeout():
 	lost_track = true
 
+func _on_AudioStreamPlayer2D_finished():
+	$AudioStreamPlayer2D.play()

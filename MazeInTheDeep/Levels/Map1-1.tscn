@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ASSETS/maps/MapsLevel1/MapsLevel1-1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,13 +7,23 @@
 [ext_resource path="res://ASSETS/music/level_music.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/fonts/RockSalt-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Levels/Map1-1.gd" type="Script" id=7]
+[ext_resource path="res://HealthBar.gd" type="Script" id=8]
+[ext_resource path="res://ASSETS/fonts/Roboto-Light.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://collectible/collectible.tscn" type="PackedScene" id=10]
 
-[sub_resource type="NavigationPolygon" id=1]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+font_data = ExtResource( 9 )
+
+[sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( 1463, -318, 1463, 242, 1324.19, 85.049, 1324.19, -138.643, 1254.37, 237.566, 1309.23, 110.469, 1115.35, 275.696, 1109.74, 110.469, 1229.43, 247.734, 1299.26, -179.315, 1111, -318, 1269.33, -179.315, 1114.73, -138.643, 1244.4, -138.643, 1228.81, 280.78, 1079.82, 308.741, 705.77, -316.58, 1039, -318, 1034.93, -138.643, 900.274, -184.399, 1239.41, 674.783, 1104.75, 832.385, 1099.77, 522.266, 1284.29, 522.266, 1259.36, 634.112, 1463, 298, 1463.84, 832.385, 1309.23, 832.385, 1309.23, 674.783, 1289.28, 634.112, 1324.19, 501.93, 1044.91, 110.469, 1044.91, 242.65, 705.77, 242.65, 855.388, 110.469, 705.77, 54.5455, 825.465, 85.049, 705.77, -118.308, 830.452, -143.727, 680.833, 24.042, 675.846, -92.8881, 1244.4, 44.3776, 1094.78, -97.972, 920.223, 44.3776, 1054.88, -97.972, 920.223, -148.811, -311.636, 435.839, -311.636, 329.077, 17.5248, 329.077, -107.157, 435.839, 17.5248, 486.678, -97.1827, 471.427, -97.1827, 629.028, 37.4739, 527.35, 212.029, 629.028, 92.334, 527.35, 212.029, 440.923, 102.309, 486.678, 241.953, 323.993, 251.927, 410.42, 102.309, 252.818, 222.003, 308.741, -351.534, 517.182, -186.954, 517.182, -186.954, 700.203, -251.788, 664.615, 426.482, 832.385, -536.064, 832.385, -536.064, 710.371, -276.725, 710.371, -162.017, 720.538, 431.469, 105.385, 431.469, 232.483, 306.787, 232.483, 306.787, -153.895, 441.444, 69.7972, 426.482, -6.46152, 446.431, 18.958, 226.991, -153.895, 226.991, 39.2937, 102.309, 39.2937, 102.309, -31.8811, 102.309, -316.58, 251.927, -184.399, 635.948, -316.58, 281.851, -184.399, 635.948, -169.147, 451.418, -169.147, 426.482, -143.727, 501.291, -6.46152, 501.291, -92.8881, 640.935, 24.042, -181.967, 54.5455, -311.636, 232.483, -311.636, -77.6364, -127.106, -77.6364, -162.017, 24.042, 291.825, 496.846, 620.986, 496.846, 620.986, 690.035, 481.342, 629.028, 885.312, 644.28, 690.808, 644.28, 690.808, 303.657, 830.452, 507.014, 1239.41, 832.385, 860.376, 522.266, 1044.91, 522.266, 1049.89, 832.385, 915.236, 664.615, 486.329, 69.7972, 481.342, 18.958, 615.999, 59.6294, 1324.19, 461.259, 1254.37, 298.573, 1294.27, 440.923, 865.363, 440.923, 855.388, -184.399, 501.291, 100.301, 615.999, 410.42, 496.304, 293.49, 476.355, 318.909, 222.003, 146.056, 87.3467, 227.399, 187.092, 110.469, -157.03, 110.469, -181.967, 90.1329, 830.452, 456.175, 915.236, 700.203, 885.312, 725.622, 501.291, 832.385, 655.897, 725.622, 501.291, 664.615, 446.431, 629.028, 291.825, 695.119, 426.482, 659.531, 266.889, 720.538, 17.5248, 24.042, -82.2209, -108.14, 17.5248, -316.58, -82.2209, -148.811, -122.119, -179.315, -536.064, -316.58, -361.509, -179.315, -401.407, -148.811, -536.064, 649.364, -396.42, 486.678, -286.495, 649.95, -251.788, 695.119 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5 ), PoolIntArray( 6, 7, 5, 4, 8 ), PoolIntArray( 0, 3, 9 ), PoolIntArray( 10, 0, 9, 11 ), PoolIntArray( 12, 10, 11, 13 ), PoolIntArray( 6, 8, 14, 15 ), PoolIntArray( 16, 17, 18, 19 ), PoolIntArray( 20, 21, 22, 23, 24 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 25, 28, 29, 30 ), PoolIntArray( 31, 32, 33, 34 ), PoolIntArray( 34, 33, 35, 36 ), PoolIntArray( 37, 38, 36, 35, 39, 40 ), PoolIntArray( 12, 13, 41, 42 ), PoolIntArray( 42, 41, 43, 44 ), PoolIntArray( 44, 43, 45, 18 ), PoolIntArray( 46, 47, 48, 49 ), PoolIntArray( 49, 48, 50, 51 ), PoolIntArray( 52, 51, 50, 53 ), PoolIntArray( 54, 52, 53, 55 ), PoolIntArray( 56, 54, 55, 57 ), PoolIntArray( 58, 59, 56, 57, 60, 61 ), PoolIntArray( 62, 63, 64, 65 ), PoolIntArray( 66, 67, 68, 69, 70 ), PoolIntArray( 71, 72, 73, 74 ), PoolIntArray( 75, 71, 74, 76, 77 ), PoolIntArray( 78, 79, 80, 81 ), PoolIntArray( 78, 81, 82, 83 ), PoolIntArray( 83, 82, 84, 85 ), PoolIntArray( 85, 84, 86, 87 ), PoolIntArray( 74, 85, 87, 88 ), PoolIntArray( 89, 90, 40, 39, 91 ), PoolIntArray( 92, 93, 94, 95, 96 ), PoolIntArray( 97, 98, 99, 100 ), PoolIntArray( 101, 102, 103, 104 ), PoolIntArray( 20, 105, 21 ), PoolIntArray( 29, 24, 23, 30 ), PoolIntArray( 106, 107, 108, 109 ), PoolIntArray( 74, 88, 76 ), PoolIntArray( 110, 75, 77, 111, 112 ), PoolIntArray( 25, 30, 113 ), PoolIntArray( 114, 25, 113, 115 ), PoolIntArray( 14, 114, 115, 116, 15 ), PoolIntArray( 18, 45, 19 ), PoolIntArray( 16, 19, 117 ), PoolIntArray( 37, 16, 117, 38 ), PoolIntArray( 89, 91, 112, 111 ), PoolIntArray( 118, 110, 112 ), PoolIntArray( 118, 112, 119, 120 ), PoolIntArray( 121, 120, 119 ), PoolIntArray( 121, 119, 59, 58 ), PoolIntArray( 122, 61, 60, 123, 124 ), PoolIntArray( 125, 124, 123, 93 ), PoolIntArray( 126, 125, 93 ), PoolIntArray( 103, 15, 116, 127 ), PoolIntArray( 103, 127, 104 ), PoolIntArray( 101, 104, 106, 109 ), PoolIntArray( 128, 109, 108 ), PoolIntArray( 129, 128, 108 ), PoolIntArray( 129, 108, 130, 131 ), PoolIntArray( 131, 130, 132, 99 ), PoolIntArray( 99, 132, 100 ), PoolIntArray( 97, 100, 133 ), PoolIntArray( 134, 97, 133, 135 ), PoolIntArray( 134, 135, 66, 136 ), PoolIntArray( 92, 126, 93 ), PoolIntArray( 137, 96, 95, 138 ), PoolIntArray( 139, 137, 138, 140 ), PoolIntArray( 139, 140, 141 ), PoolIntArray( 142, 139, 141, 143 ), PoolIntArray( 142, 143, 144 ), PoolIntArray( 145, 142, 144, 146 ), PoolIntArray( 147, 145, 146, 62 ), PoolIntArray( 65, 147, 62 ), PoolIntArray( 148, 65, 64 ), PoolIntArray( 69, 148, 64, 70 ), PoolIntArray( 66, 70, 136 ) ]
 outlines = [ PoolVector2Array( -536.064, -316.58, 17.5248, -316.58, 17.5248, 24.042, -162.017, 24.042, -181.967, 54.5455, -181.967, 90.1329, -157.03, 110.469, 187.092, 110.469, 222.003, 146.056, 222.003, 308.741, 241.953, 323.993, 476.355, 318.909, 496.304, 293.49, 501.291, 100.301, 486.329, 69.7972, 441.444, 69.7972, 431.469, 105.385, 431.469, 232.483, 306.787, 232.483, 306.787, -153.895, 281.851, -184.399, 251.927, -184.399, 226.991, -153.895, 226.991, 39.2937, 102.309, 39.2937, 102.309, -31.8811, 102.309, -316.58, 635.948, -316.58, 635.948, -169.147, 451.418, -169.147, 426.482, -143.727, 426.482, -6.46152, 446.431, 18.958, 481.342, 18.958, 501.291, -6.46152, 501.291, -92.8881, 675.846, -92.8881, 705.77, -118.308, 705.77, -316.58, 1039, -318, 1034.93, -138.643, 1054.88, -97.972, 1094.78, -97.972, 1114.73, -138.643, 1111, -318, 1463, -318, 1463, 242, 1254.37, 237.566, 1229.43, 247.734, 1228.81, 280.78, 1254.37, 298.573, 1463, 298, 1463.84, 832.385, 1309.23, 832.385, 1309.23, 674.783, 1289.28, 634.112, 1259.36, 634.112, 1239.41, 674.783, 1239.41, 832.385, 1104.75, 832.385, 1099.77, 522.266, 1284.29, 522.266, 1324.19, 501.93, 1324.19, 461.259, 1294.27, 440.923, 865.363, 440.923, 830.452, 456.175, 830.452, 507.014, 860.376, 522.266, 1044.91, 522.266, 1049.89, 832.385, 501.291, 832.385, 501.291, 664.615, 481.342, 629.028, 446.431, 629.028, 426.482, 659.531, 426.482, 832.385, -536.064, 832.385, -536.064, 710.371, -276.725, 710.371, -251.788, 695.119, -251.788, 664.615, -286.495, 649.95, -536.064, 649.364 ), PoolVector2Array( -311.636, -77.6364, -127.106, -77.6364, -82.2209, -108.14, -82.2209, -148.811, -122.119, -179.315, -361.509, -179.315, -401.407, -148.811, -396.42, 486.678, -351.534, 517.182, -186.954, 517.182, -186.954, 700.203, -162.017, 720.538, 266.889, 720.538, 291.825, 695.119, 291.825, 496.846, 620.986, 496.846, 620.986, 690.035, 655.897, 725.622, 885.312, 725.622, 915.236, 700.203, 915.236, 664.615, 885.312, 644.28, 690.808, 644.28, 690.808, 303.657, 1079.82, 308.741, 1115.35, 275.696, 1109.74, 110.469, 1309.23, 110.469, 1324.19, 85.049, 1324.19, -138.643, 1299.26, -179.315, 1269.33, -179.315, 1244.4, -138.643, 1244.4, 44.3776, 920.223, 44.3776, 920.223, -148.811, 900.274, -184.399, 855.388, -184.399, 830.452, -143.727, 825.465, 85.049, 855.388, 110.469, 1044.91, 110.469, 1044.91, 242.65, 705.77, 242.65, 705.77, 54.5455, 680.833, 24.042, 640.935, 24.042, 615.999, 59.6294, 615.999, 410.42, 251.927, 410.42, 212.029, 440.923, 212.029, 629.028, -97.1827, 629.028, -97.1827, 471.427, -107.157, 435.839, -311.636, 435.839, -311.636, 329.077, 17.5248, 329.077, 17.5248, 486.678, 37.4739, 527.35, 92.334, 527.35, 102.309, 486.678, 102.309, 252.818, 87.3467, 227.399, -311.636, 232.483 ) ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 19.3457
 height = 134.606
 
@@ -23,6 +33,46 @@ font_data = ExtResource( 6 )
 [node name="NavigationServer2D2" type="Node2D"]
 scale = Vector2( 1.60408, 1.57359 )
 script = ExtResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 19.0
+margin_right = 24.0
+margin_bottom = 19.0
+script = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HealthBar"]
+margin_right = 56.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer/HealthBar/Panel"]
+margin_left = 142.0
+margin_top = 13.0
+margin_right = 233.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 2 )
+text = "100%"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HealthBar/Panel"]
+margin_left = 16.0
+margin_top = 11.0
+margin_right = 137.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 2 )
+text = "energy:"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/HealthBar"]
+wait_time = 100.0
+one_shot = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 1024.26, 599.902 )
@@ -56,6 +106,18 @@ limit_bottom = 1888
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../Camera2D")
 
+[node name="collectible" parent="." instance=ExtResource( 10 )]
+position = Vector2( 174.555, 1103.21 )
+
+[node name="collectible2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 663.309, 920.189 )
+
+[node name="collectible3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 942.596, 386.378 )
+
+[node name="collectible4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1960, 833.762 )
+
 [node name="Positions" type="Node2D" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Positions" groups=["positions"]]
@@ -75,7 +137,7 @@ edge_connection_margin = 10.0
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( 561, 342 )
-navpoly = SubResource( 1 )
+navpoly = SubResource( 4 )
 
 [node name="Shark" parent="Navigation2D" instance=ExtResource( 3 )]
 position = Vector2( 763.054, 716.832 )
@@ -93,7 +155,7 @@ position = Vector2( 1953.14, 1.27098 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinPoint"]
 position = Vector2( 0.671631, 17.7957 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -110,4 +172,12 @@ text = "EXIT"
 align = 1
 valign = 1
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="timeout" from="CanvasLayer/HealthBar/Timer" to="CanvasLayer/HealthBar" method="_on_Timer_timeout"]
+[connection signal="add_time" from="collectible" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible2" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible3" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible4" to="CanvasLayer/HealthBar" method="_on_add_time"]
 [connection signal="area_entered" from="WinPoint" to="." method="_on_WinPoint_area_entered"]

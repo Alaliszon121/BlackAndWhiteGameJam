@@ -57,7 +57,7 @@ position = Vector2( -0.285713, 45.4286 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "up"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -135,7 +135,10 @@ position = Vector2( -1.42857, 21.4286 )
 shape = SubResource( 45 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1.44249e-28, 24.2857 )
 stream = ExtResource( 4 )
 volume_db = -10.0
 autoplay = true
 max_distance = 1000.0
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]

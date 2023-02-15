@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ASSETS/maps/MapsLevel2/MapLevel2-1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,17 @@
 [ext_resource path="res://ASSETS/maps/Background.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/fonts/RockSalt-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Levels/Map2-1.gd" type="Script" id=6]
+[ext_resource path="res://ASSETS/music/level_music.wav" type="AudioStream" id=7]
+[ext_resource path="res://HealthBar.gd" type="Script" id=8]
+[ext_resource path="res://ASSETS/fonts/Roboto-Light.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://collectible/collectible.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 38
+font_data = ExtResource( 9 )
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 2334.05, 1337.07, 2478.68, 1164.22, 2478.68, 1586.18, 2329.06, 1606.52, 2294.15, 1296.4, 2054.76, 1159.13, 1885.19, 1306.57, 2229.32, 1403.16, 2229.32, 1601.43, 2104.63, 1591.27, 2094.66, 1540.43, 1800.41, 1408.24, 2047.17, 1524.6, 1635.83, 1520.09, 1640.82, 1321.82, 1760.51, 1357.41, 1755.52, 1184.55, 1581.22, 1286.23, 2034.81, 1138.8, 1885.19, 950.692, 2034.81, 1098.13, 2064.74, 950.692, 2056.66, 1077.79, 2244.28, 1077.79, 2094.66, 920.189, 2244.28, 655.825, 2094.66, 864.266, 34.911, 162.685, 29.9237, 25.4196, 423.919, 30.5035, 248.286, 163.132, 269.313, 177.937, 423.919, 396.545, 269.313, 233.86, 229.415, 396.545, 234.402, 244.028, 2718.07, 1611.6, 2723.06, 1759.04, 967.533, 1753.95, 2299.14, 1637.02, 39.8983, 244.028, 204.479, 411.797, 39.8983, 615.154, 204.479, 447.385, 259.77, 615.154, 234.402, 462.636, 698.22, 462.636, 279.288, 640.573, 3022.29, 1306.57, 2787.89, 1311.65, 2787.89, 1103.21, 2902.6, 1199.8, 2334.05, 1077.79, 2329.06, 711.748, 2553.49, 711.748, 2488.65, 864.266, 882.749, 1382.83, 887.736, 1753.95, 723.156, 1753.95, 723.156, 1560.76, 703.207, 1535.34, 493.741, 1382.83, 673.283, 1535.34, 493.741, 1591.27, 653.334, 1560.76, 653.334, 1753.95, 473.792, 1616.69, 44.8855, 1753.95, 433.894, 1616.69, 413.944, 1591.27, 256.876, 1621.77, 284.275, 1606.52, 2699.91, 265.433, 2847.74, 264.364, 2847.74, 401.629, 2344.02, 401.629, 2668.2, 254.196, 1396.49, 1539.77, 957.558, 1540.43, 957.558, 1337.07, 1112.16, 1398.08, 44.8855, 1621.77, 284.275, 1555.68, 413.944, 1382.83, 199.491, 1382.83, 249.364, 1530.26, 44.8855, 1530.26, 179.542, 1347.24, 643.359, 183.021, 643.359, 396.545, 493.741, 396.545, 493.741, 35.5874, 668.296, 157.601, 872.774, 35.5874, 698.22, 157.601, 872.774, 233.86, 718.169, 183.021, 722.605, 434.553, 890.299, 259.28, 2563.46, 213.524, 2563.46, 40.6713, 3027.28, 40.6713, 2713.08, 172.853, 2747.99, 854.098, 2747.99, 477.888, 2857.71, 477.888, 2857.71, 655.825, 2872.67, 686.329, 3032.27, 854.098, 2917.56, 686.329, 2259.24, 172.853, 2259.24, 391.462, 2054.76, 391.462, 2164.48, 228.776, 2019.85, 431.217, 2019.85, 615.154, 1830.33, 615.154, 1850.28, 482.972, 1885.19, 457.552, 2673.18, 462.636, 2673.18, 849.014, 2538.53, 849.014, 2588.4, 691.413, 2972.42, 930.357, 3022.29, 930.357, 2967.43, 1154.05, 2952.47, 1199.8, 3022.29, 1764.12, 2792.88, 1764.12, 2792.88, 1611.6, 2902.6, 1606.52, 2927.53, 1591.27, 3021.23, 1391.59, 2927.53, 1550.59, 2732.61, 1392.86, 2887.64, 1540.43, 2568.45, 1540.43, 1885.19, 249.112, 2124.58, 249.112, 1760.51, 391.462, 1186.97, 391.462, 1186.97, 259.28, 1416.39, 259.28, 1446.31, 228.776, 1580.97, 950.692, 1780.46, 950.692, 1780.46, 1077.79, 1421.38, 1077.79, 1421.38, 894.769, 1536.08, 894.769, 947.584, 854.098, 947.584, 701.58, 1366.52, 701.58, 1375.43, 858.635, 893.102, 950.692, 1306.67, 950.692, 1306.67, 1138.8, 1157.05, 1072.71, 638.372, 701.58, 638.372, 1062.54, 503.716, 1062.54, 503.716, 854.098, 440.416, 701.58, 483.766, 823.594, 438.881, 823.594, 418.932, 681.245, 1546.06, 1398.08, 1546.06, 1581.1, 1436.34, 1555.68, 967.533, 1616.69, 1401.43, 1611.6, 1570.99, 1611.6, 2034.81, 1616.69, 2254.25, 1637.02, 1541.07, 482.972, 1416.39, 686.329, 1630.84, 843.93, 1635.83, 482.972, 1785.45, 630.406, 952.571, 233.86, 1102.19, 188.105, 1102.19, 396.545, 902.698, 401.629, 930.333, 259.28, 2703.11, 1357.41, 2568.45, 1118.46, 2708.09, 1103.21, 1346.57, 1179.47, 1186.97, 1286.23, 1186.97, 1103.21, 2114.61, 676.161, 2046.07, 843.93, 2089.67, 706.664, 1416.39, 620.238, 39.8983, 706.664, 189.517, 884.601, 204.479, 833.762, 259.339, 706.664, 264.326, 833.762, 2942.5, 650.741, 2947.48, 218.608, 2922.55, 172.853, 279.288, 686.329, 448.855, 610.07, 418.932, 625.322, 1371.5, 604.986, 902.122, 487.721, 902.698, 604.986, 2668.2, 193.189, 2553.49, 244.028, 2733.03, 1067.62, 2543.51, 1077.79, 2533.54, 935.441, 1446.31, 177.937, 1575.98, 244.028, 867.787, 467.72, 862.8, 650.741, 2882.65, 1143.88, 2882.65, 935.441, 2767.94, 1072.71, 2488.65, 920.189, 2503.62, 244.028, 2344.02, 172.853, 2493.81, 224.814, 2493.64, 40.6713, 2324.07, 147.434, 1640.82, 40.6713, 2279.19, 147.434, 2146.07, 147.085, 1804.94, 142.895, 413.944, 854.098, 279.288, 884.601, 867.787, 421.965, 2588.4, 620.238, 2553.49, 599.902, 2114.61, 462.636, 2304.12, 599.902, 1808.65, 708.801, 1785.45, 691.413, 2518.58, 1611.6, 2164.48, 172.853, 1640.82, 223.692, 1760.51, 185.457, 1625.85, 244.028, 1566.01, 213.524, 1566.01, 40.6713, 1402.32, 151.737, 952.571, 35.5874, 1132.11, 152.517, 862.8, 920.189, 723.156, 640.573, 723.156, 1072.71, 703.207, 615.154, 408.957, 1123.55, 279.288, 1301.48, 433.894, 1174.38, 922.647, 1296.4, 1077.25, 1174.38, 1077.25, 1357.41, 1436.34, 1596.35 )
@@ -22,6 +33,46 @@ font_data = ExtResource( 5 )
 [node name="NavigationServer2D2" type="Node2D"]
 scale = Vector2( 1.60408, 1.57359 )
 script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 19.0
+margin_right = 24.0
+margin_bottom = 19.0
+script = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HealthBar"]
+margin_right = 56.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer/HealthBar/Panel"]
+margin_left = 142.0
+margin_top = 13.0
+margin_right = 233.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 5 )
+text = "100%"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HealthBar/Panel"]
+margin_left = 16.0
+margin_top = 11.0
+margin_right = 137.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 5 )
+text = "energy:"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/HealthBar"]
+wait_time = 100.0
+one_shot = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 1535.46, 899.853 )
@@ -59,25 +110,45 @@ limit_bottom = 2832
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../Camera2D")
 
+[node name="collectible" parent="." instance=ExtResource( 10 )]
+position = Vector2( 787.991, 167.769 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 114.707, 849.014 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 992.469, 543.979 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2423.82, 177.937 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="collectible5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1366.52, 1692.94 )
+scale = Vector2( 0.4, 0.4 )
+
 [node name="Positions" type="Node2D" parent="."]
 
 [node name="Position2D" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 1610.27, 320.922 )
+position = Vector2( 1486.21, 315.203 )
 
 [node name="Position2D2" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 360.955, 580.837 )
+position = Vector2( 364.072, 1154.05 )
 
 [node name="Position2D3" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 1992.42, 1679.6 )
+position = Vector2( 2304.12, 1692.94 )
 
 [node name="Position2D4" type="Position2D" parent="Positions" groups=["positions"]]
-position = Vector2( 2176.95, 828.678 )
+position = Vector2( 1725.6, 767.671 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 edge_connection_margin = 10.0
 
 [node name="Shark" parent="Navigation2D" instance=ExtResource( 3 )]
-position = Vector2( 498.728, 559.231 )
+position = Vector2( 1700.66, 198.273 )
 scale = Vector2( 1, 1 )
 path_to_player = NodePath("../../Player")
 path_of_positions = NodePath("../../Positions")
@@ -107,4 +178,17 @@ text = "EXIT"
 align = 1
 valign = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="timeout" from="CanvasLayer/HealthBar/Timer" to="CanvasLayer/HealthBar" method="_on_Timer_timeout"]
+[connection signal="add_time" from="collectible" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible2" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible3" to="CanvasLayer/HealthBar" method="_on_add_time"]
+[connection signal="add_time" from="collectible5" to="CanvasLayer/HealthBar" method="_on_add_time"]
 [connection signal="area_entered" from="WinPoint" to="." method="_on_WinPoint_area_entered"]
