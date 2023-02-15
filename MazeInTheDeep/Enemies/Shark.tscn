@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://addons/luisboch.field_of_view/field_of_view.gd" type="Script" id=2]
@@ -36,6 +36,10 @@ animations = [ {
 "speed": 4.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=45]
+radius = 17.1429
+height = 25.7143
+
 [node name="Shark" type="KinematicBody2D"]
 position = Vector2( -1.00974e-28, 0 )
 scale = Vector2( 0.7, 0.7 )
@@ -52,7 +56,7 @@ position = Vector2( -0.285713, 45.4286 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 38 )
 animation = "up"
-frame = 6
+frame = 7
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -120,3 +124,11 @@ fov_warn_color = Color( 1, 1, 1, 1 )
 fov_danger_color = Color( 1, 1, 1, 1 )
 view_detail = 40
 frequency = 0.05
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.42857, 21.4286 )
+shape = SubResource( 45 )

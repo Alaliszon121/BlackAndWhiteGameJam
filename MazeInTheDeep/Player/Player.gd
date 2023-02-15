@@ -11,6 +11,8 @@ const FRICTION = 250
 
 var last_position
 var rotation_rate = 10.0
+
+onready var bite = $AudioStreamPlayer
 # magnitude((last - curr)) / delta
 # input: 0..300
 # output: 1..10
@@ -40,3 +42,8 @@ func walk_state(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
+
+func _on_enemy_checker_area_entered(area):
+	bite.play()
+	yield(bite, "finished")
+	get_tree().reload_current_scene()

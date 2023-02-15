@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shark_bite.wav-ece1d403411640346900c36d0fb05e2e.sample"
+
+[deps]
+
+source_file="res://ASSETS/music/shark_bite.wav"
+dest_files=[ "res://.import/shark_bite.wav-ece1d403411640346900c36d0fb05e2e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
