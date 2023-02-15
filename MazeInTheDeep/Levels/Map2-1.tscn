@@ -53,8 +53,8 @@ scale = Vector2( 1, 1 )
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 3286
-limit_bottom = 1888
+limit_right = 4928
+limit_bottom = 2832
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../Camera2D")
